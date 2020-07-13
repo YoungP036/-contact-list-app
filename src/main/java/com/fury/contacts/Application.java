@@ -22,16 +22,11 @@ public class Application {
     CommandLineRunner init(UserRepository userRepository) {
         return args -> {
             Stream.of("Patrick Young", "Eric Scott", "Mike Abreau", "Larry Krebs", "Jane Song", "Joy Cornelio", "Terry Patterson").forEach(name -> {
-//            	User user = User.builder()
-//            			.firstName(StringUtils.split(name)[0])
-//            			.lastName(StringUtils.split(name)[1])
-//            			.email(StringUtils.replace(name, " ", ".") + "@qvc.com")
-//            			.build();
-            	User user = new User();
-    			user.setFirstName(StringUtils.split(name)[0]);
-    			user.setLastName(StringUtils.split(name)[1]);
-    			user.setEmail(StringUtils.replace(name, " ", ".") + "@qvc.com");
-
+            	User user = User.builder()
+            			.firstName(StringUtils.split(name)[0])
+            			.lastName(StringUtils.split(name)[1])
+            			.email(StringUtils.replace(name, " ", ".") + "@qvc.com")
+            			.build();
                 userRepository.save(user);
             });
             userRepository.findAll().forEach(System.out::println);
