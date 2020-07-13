@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fury.contacts.model.User;
 import com.fury.contacts.persist.UserRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
@@ -24,11 +27,13 @@ public class UserController {
 
     @GetMapping("/users")
     public List<User> getUsers() {
+    	log.info("Serving GET request");
         return (List<User>) userRepository.findAll();
     }
 
     @PostMapping("/users")
     void addUser(@RequestBody User user) {
+    	log.info("Service POST request");
         userRepository.save(user);
     }
 }

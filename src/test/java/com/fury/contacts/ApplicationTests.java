@@ -10,12 +10,11 @@ public class ApplicationTests {
 
 	@Test
 	public void contextLoads() {
-		User user = User.builder()
-				.firstName("Patrick")
-				.lastName("Young")
-				.email("patrick.young@qvc.com")
-				.build();
-		System.out.println(user.toString());
+//		User user = User.builder()
+//				.firstName("Patrick")
+//				.lastName("Young")
+//				.email("patrick.young@qvc.com")
+//				.build();
+//		System.out.println(user.toString());
 	}
-
 }

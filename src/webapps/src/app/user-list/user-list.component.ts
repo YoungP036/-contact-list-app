@@ -10,9 +10,8 @@ import { UserService } from '../user-service.service';
 export class UserListComponent implements OnInit {
 
     users: User[];
-    constructor(private userService: UserService) {
 
-    }
+    constructor(private userService: UserService) {}
 
     ngOnInit() {
         this.userService.findAll().subscribe(data => {

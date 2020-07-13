@@ -16,7 +16,7 @@ export class UserFormComponent {
         this.user = new User();
     }
 
-    onSumbit() {
+    onSubmit() {
         this.userService.save(this.user).subscribe(result => this.gotoUserList());
     }
 
